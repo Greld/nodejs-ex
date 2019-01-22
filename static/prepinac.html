@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="cs">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Test Windy Widgetu</title>
+        <script src="https://api.mapy.cz/loader.js"></script>
+        <script>Loader.load()</script>
+
+        <link rel="stylesheet" type="text/css" href="css/dve-mapy.css">
+    </head>
+    <body>
+
+        <ol class="menu">
+            <li><a href="/">Ukázka jen Windy</a></li>
+            <li><a href="/prepinac.html">Ukázka - Dvě mapy</a></li>
+        </ol>
+
+        <div id="mapsContainer">
+            <iframe style="width:800px; height:600px;" id="windyMap" src="/embed2.html?lat=50.050&lon=14.400&zoom=5&level=surface&overlay=wind&menu=&message=&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=50.050&detailLon=14.400&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
+            <div id="sznMap" style="width:800px; height:600px;"></div>
+            <button id="prepinac" onclick="prepni(this)">Přepnout na Radar</button>
+
+
+            <div class="caseDescription">
+                <h3>Ukázka - Dvě mapy</h3>
+                <p>
+                    Obsah veřejně dostupného iframu embed.windy.com/embed2.html je prohnán přes proxy,
+                    aby obsah iframu měl stejný origin.
+                    Následně jsme schopni přistoupit přes iframe.contentWindow.W
+                    k API inicializovanému uvnitř iframu.
+                </p>
+                <p>
+                    Díky tomu si přepneme na v iframu běžně dostupnou radarovou vrstvu a odchytáváme události zoom, posun mapy, klik do mapy.
+                    Pohyby s mapou i zoom obousměrně synchronizujeme s mapou z Mapy.cz API. Do mapy Mapy.cz pak budeme vlastním způsobem vykreslovat města s teplotou.
+                    Mezi mapami bude mít uživatel možnost přepínat, tak jako kdyby "zapínal/vypínal radarovou vrstvu".
+                </p>
+            </div>
+        </div>
+
+
+        <script src="js/dve-mapy.js"></script>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="cs">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Test Windy Widgetu</title>
+
+        <link rel="stylesheet" type="text/css" href="css/jen-windy.css">
+    </head>
+    <body>
+
+        <ol class="menu">
+            <li><a href="/">Ukázka - Jen Windy</a></li>
+            <li><a href="/prepinac.html">Ukázka - Dvě mapy</a></li>
+        </ol>
+
+        <div id="mapsContainer">
+            <div style="text-align: center">
+                Vybraná pozice: <span id="position"></span>
+            </div>
+            <iframe style="width:800px; height:600px;" id="windyMap" src="/embed2.html?lat=50.050&lon=14.400&zoom=5&level=surface&overlay=wind&menu=&message=&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=50.050&detailLon=14.400&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
+
+            <div class="caseDescription">
+                <h3>Ukázka - Jen Windy</h3>
+                <p>
+                    Obsah veřejně dostupného iframu embed.windy.com/embed2.html je prohnán přes proxy,
+                    aby obsah iframu měl stejný origin.
+                    Následně jsme schopni přistoupit přes iframe.contentWindow.W
+                    k API inicializovanému uvnitř iframu.
+                </p>
+                <p>
+                    Díky tomu si přepneme na v iframu běžně dostupnou radarovou vrstvu a odchytáváme událost klik do mapy.
+                    V této ukázce také měníme implementaci W.labelsLayer přidáním funkcionality dotahující informace o teplotách ve městech, kterou máte na windy.com.
+                    Informace o teplotách ženeme přes proxy, aby nebylo vidět, že voláme vaše API.
+                    Zvažujeme tyto teploty na svém backendu na nějakou dobu kešovat, abychom odstínili vaše API od přímé návštěvnosti našich uživatelů.
+                </p>
+            </div>
+        </div>
+
+
+
+        <script src="js/jen-windy.js"></script>
+    </body>
+</html>

@@ -1,0 +1,11 @@
+#mapsContainer {
+	margin: 0 auto;
+	width: 800px;
+}
+
+#prepinac {
+	margin: 10px auto;
+	padding: 8px 24px;
+	font-size: 20px;
+	display: block;
+}
