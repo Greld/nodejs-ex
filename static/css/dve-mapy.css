@@ -1,6 +1,26 @@
-#mapsContainer {
+#mainContainer {
 	margin: 0 auto;
 	width: 800px;
+}
+
+#mapsContainer {
+	position: relative;
+	width:800px;
+	height:600px;
+}
+
+#mapsContainer::after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+#windyMap, #sznMap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width:800px;
+	height:600px;
 }
 
 #prepinac {

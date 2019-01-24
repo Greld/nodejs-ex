@@ -18,9 +18,11 @@
             <li><a href="/prepinac.html">Ukázka - Dvě mapy</a></li>
         </ol>
 
-        <div id="mapsContainer">
-            <iframe style="width:800px; height:600px;" id="windyMap" src="/embed2.html?lat=50.050&lon=14.400&zoom=5&level=surface&overlay=wind&menu=&message=&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=50.050&detailLon=14.400&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
-            <div id="sznMap" style="width:800px; height:600px;"></div>
+        <div id="mainContainer">
+            <div id="mapsContainer">
+                <iframe id="windyMap" src="/embed2.html?lat=50.050&lon=14.400&zoom=5&level=surface&overlay=wind&menu=&message=&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=50.050&detailLon=14.400&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
+                <div id="sznMap"></div>
+            </div>
             <button id="prepinac" onclick="prepni(this)">Přepnout na Radar</button>
 
 

@@ -174,6 +174,25 @@ iframe.onload = function() {
 			body.overlay-radar #map-container .leaflet-objects-pane .labels-layer {
 				text-shadow: none;
 			}
+			body.embed-map #embed-zoom {
+				position: absolute;
+				left: 40px;
+				bottom: 24px;
+				transform: scale(1.1, 1.1);
+				right: auto;
+				top: auto;
+			}
+			body.embed-map #embed-zoom .zoom-ctrl {
+				color: black;
+				display: inline-block;
+				margin-right: 8px;
+				border-radius: 0;
+				background-color: white;
+				margin-bottom: 4px;
+			}
+			body.embed-map #embed-zoom .zoom-ctrl:hover {
+				background-color: rgb(203, 203, 203);
+			}
 		`,
 		head = iframeWindow.document.head,
 		style = iframeWindow.document.createElement('style');

@@ -14,11 +14,11 @@ function prepni(elem) {
 
 function showCorrectMap(){
 	if (mode === "Mapy.cz") {
-		document.getElementById("sznMap").style.display = "block";
-		document.getElementById("windyMap").style.display = "none";
+		document.getElementById("sznMap").style.visibility = "visible";
+		document.getElementById("windyMap").style.visibility = "hidden";
 	} else {
-		document.getElementById("sznMap").style.display = "none";
-		document.getElementById("windyMap").style.display = "block";
+		document.getElementById("sznMap").style.visibility = "hidden";
+		document.getElementById("windyMap").style.visibility = "visible";
 	}
 }
 
@@ -210,6 +210,25 @@ iframe.onload = function() {
 			}
 			body.overlay-radar #map-container .leaflet-objects-pane .labels-layer {
 				text-shadow: none;
+			}
+			body.embed-map #embed-zoom {
+				position: absolute;
+				left: 40px;
+				bottom: 24px;
+				transform: scale(1.1, 1.1);
+				right: auto;
+				top: auto;
+			}
+			body.embed-map #embed-zoom .zoom-ctrl {
+				color: black;
+				display: inline-block;
+				margin-right: 8px;
+				border-radius: 0;
+				background-color: white;
+				margin-bottom: 4px;
+			}
+			body.embed-map #embed-zoom .zoom-ctrl:hover {
+				background-color: rgb(203, 203, 203);
 			}
 		`,
 		head = iframeWindow.document.head,
